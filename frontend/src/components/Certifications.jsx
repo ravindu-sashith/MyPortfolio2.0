@@ -2,7 +2,7 @@ import { certifications } from '../data/mock';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { ExternalLink, Award } from 'lucide-react';
+import { ExternalLink, Award, Calendar, Building } from 'lucide-react';
 
 const Certifications = () => {
   const handleCertificateClick = (link) => {
@@ -18,37 +18,35 @@ const Certifications = () => {
               <Award className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">Certifications</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Industry-recognized certifications demonstrating expertise and commitment to excellence
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">Professional Certifications</h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            Validated expertise through industry-leading certifications that demonstrate deep knowledge in cybersecurity frameworks, methodologies, and best practices.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {certifications.map((cert) => (
             <Card 
               key={cert.id} 
               className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white shadow-lg hover:-translate-y-2"
             >
-              <CardHeader className="pb-4">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center overflow-hidden">
-                      <img 
-                        src={cert.logo} 
-                        alt={cert.title}
-                        className="w-12 h-12 object-cover rounded-lg"
-                      />
+              <CardHeader className="pb-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <CardTitle className="text-2xl font-bold text-slate-900 group-hover:text-teal-600 transition-colors mb-2">
+                      {cert.title}
+                    </CardTitle>
+                    <div className="flex items-center gap-2 text-slate-600 mb-2">
+                      <Building className="w-4 h-4" />
+                      <span className="font-semibold">{cert.issuingBody}</span>
                     </div>
-                    <div>
-                      <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-teal-600 transition-colors">
-                        {cert.title}
-                      </CardTitle>
-                      <p className="text-slate-600 font-medium">{cert.issuingBody}</p>
+                    <div className="flex items-center gap-2 text-slate-500">
+                      <Calendar className="w-4 h-4" />
+                      <span>Earned: {cert.date}</span>
                     </div>
                   </div>
-                  <Badge variant="outline" className="bg-teal-50 text-teal-700 border-teal-200 font-semibold">
-                    {cert.date}
+                  <Badge variant="outline" className="bg-gradient-to-r from-teal-50 to-blue-50 text-teal-700 border-teal-200 font-semibold px-3 py-1">
+                    Verified
                   </Badge>
                 </div>
               </CardHeader>

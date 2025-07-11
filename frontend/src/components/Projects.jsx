@@ -2,7 +2,7 @@ import { projects } from '../data/mock';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { Github, ExternalLink, Code } from 'lucide-react';
+import { Github, ExternalLink, Code, Layers } from 'lucide-react';
 
 const Projects = () => {
   const handleGithubClick = (link) => {
@@ -24,9 +24,9 @@ const Projects = () => {
               <Code className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">Featured Projects</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Innovative cybersecurity solutions and tools developed to address real-world challenges
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">Security Projects & Solutions</h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            Comprehensive cybersecurity projects showcasing practical implementation of security frameworks, automation tools, and threat mitigation strategies across diverse environments.
           </p>
         </div>
         
@@ -34,42 +34,49 @@ const Projects = () => {
           {projects.map((project) => (
             <Card 
               key={project.id} 
-              className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white shadow-lg hover:-translate-y-2 overflow-hidden"
+              className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white shadow-lg hover:-translate-y-2"
             >
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
+              <CardHeader className="pb-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-teal-100 to-blue-100 rounded-xl flex items-center justify-center">
+                    <Layers className="w-6 h-6 text-teal-600" />
+                  </div>
                   <div className="flex flex-wrap gap-2">
-                    {project.techStack.slice(0, 3).map((tech, index) => (
+                    {project.techStack.slice(0, 2).map((tech, index) => (
                       <Badge 
                         key={index}
                         variant="secondary"
-                        className="bg-black/20 text-white border-0 backdrop-blur-sm"
+                        className="bg-slate-100 text-slate-700 border-0 text-xs"
                       >
                         {tech}
                       </Badge>
                     ))}
-                    {project.techStack.length > 3 && (
-                      <Badge variant="secondary" className="bg-black/20 text-white border-0 backdrop-blur-sm">
-                        +{project.techStack.length - 3} more
+                    {project.techStack.length > 2 && (
+                      <Badge variant="secondary" className="bg-slate-100 text-slate-700 border-0 text-xs">
+                        +{project.techStack.length - 2}
                       </Badge>
                     )}
                   </div>
                 </div>
-              </div>
-              
-              <CardHeader className="pb-4">
-                <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-teal-600 transition-colors">
+                
+                <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-teal-600 transition-colors mb-3">
                   {project.name}
                 </CardTitle>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed mb-4">
                   {project.description}
                 </p>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.techStack.map((tech, index) => (
+                    <Badge 
+                      key={index}
+                      variant="outline"
+                      className="bg-gradient-to-r from-teal-50 to-blue-50 text-teal-700 border-teal-200 text-xs"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
               </CardHeader>
               
               <CardContent>
@@ -80,7 +87,7 @@ const Projects = () => {
                     className="flex-1 border-slate-300 hover:bg-slate-50 transition-all duration-300"
                   >
                     <Github className="w-4 h-4 mr-2" />
-                    GitHub
+                    Source Code
                   </Button>
                   {project.liveDemo && (
                     <Button 
