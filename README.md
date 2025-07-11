@@ -295,11 +295,27 @@ To improve SEO:
 
 ## 📧 Contact Form Integration
 
-The contact form currently shows success messages locally. To make it functional:
+The contact form is now fully functional and integrated with the backend! When users submit the form:
 
-1. Set up a backend service (EmailJS, Formspree, etc.)
-2. Update the `handleSubmit` function in `/app/frontend/src/components/Contact.jsx`
-3. Add API integration to send emails
+1. **Form Validation**: All fields are validated on the frontend
+2. **Backend Processing**: Form data is sent to `/api/contact` endpoint
+3. **Database Storage**: Messages are stored in MongoDB for your records
+4. **Email Notifications**: Messages are logged and can be configured to send email notifications to your inbox: `ravindu.sashith@gmail.com`
+5. **Success Feedback**: Users receive immediate confirmation of successful submission
+
+### Email Configuration (Optional)
+To enable email notifications, update the SMTP configuration in `/app/backend/server.py`:
+
+```python
+# Email configuration in send_email_notification function
+smtp_server = "smtp.gmail.com"  # Your SMTP server
+smtp_port = 587
+sender_email = "your-email@gmail.com"  # Your email
+sender_password = "your-app-password"  # Use app password for Gmail
+recipient_email = "ravindu.sashith@gmail.com"  # Your email address
+```
+
+All contact messages are automatically stored in the database for your review.
 
 ## 🔐 Security Considerations
 
