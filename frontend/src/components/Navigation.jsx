@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Terminal, Shield } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,7 +37,7 @@ const Navigation = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-lg shadow-lg border-b border-slate-200' 
+          ? 'bg-gray-900/95 backdrop-blur-lg shadow-lg shadow-green-500/10 border-b border-green-500/20' 
           : 'bg-transparent'
       }`}
     >
@@ -46,9 +46,12 @@ const Navigation = () => {
           {/* Logo */}
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-2xl font-bold text-slate-900 hover:text-teal-600 transition-colors"
+            className="flex items-center gap-2 text-2xl font-bold text-white hover:text-green-400 transition-colors group"
           >
-            RH
+            <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+              <Shield className="w-5 h-5 text-white" />
+            </div>
+            <span className="font-mono">RH</span>
           </button>
           
           {/* Desktop Navigation */}
@@ -57,9 +60,10 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={item.action}
-                className="text-slate-700 hover:text-teal-600 font-medium transition-colors"
+                className="text-gray-300 hover:text-green-400 font-medium transition-colors relative group font-mono"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"></span>
               </button>
             ))}
           </div>
@@ -68,7 +72,7 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden"
+            className="md:hidden text-white hover:text-green-400 hover:bg-green-500/10"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -77,13 +81,13 @@ const Navigation = () => {
         
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-200 py-4">
+          <div className="md:hidden bg-gray-900/95 backdrop-blur-lg border-t border-green-500/20 py-4">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={item.action}
-                  className="text-slate-700 hover:text-teal-600 font-medium transition-colors text-left"
+                  className="text-gray-300 hover:text-green-400 font-medium transition-colors text-left font-mono"
                 >
                   {item.label}
                 </button>
