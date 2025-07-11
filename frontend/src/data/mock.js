@@ -5,16 +5,14 @@ export const personalInfo = {
   title: "Cybersecurity Professional",
   bio: "Passionate cybersecurity expert with extensive experience in threat analysis, vulnerability assessment, and security architecture. Dedicated to protecting digital assets and staying ahead of evolving cyber threats through continuous learning and hands-on implementation.",
   profileImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-  location: "Sri Lanka",
-  email: "ravindu.hettiarachchi@example.com",
-  phone: "+94 77 123 4567"
+  email: "ravindu.sashith@gmail.com.com",
+  phone: "+94 74 133 6260"
 };
 
 export const skills = {
   cybersecurity: [
-    "Penetration Testing",
-    "Vulnerability Assessment",
-    "Security Architecture",
+    "Risk Assessment",
+    "SOC operation",
     "Incident Response",
     "Risk Management",
     "Security Auditing",
@@ -23,32 +21,15 @@ export const skills = {
   ],
   tools: [
     "Nmap",
-    "Metasploit",
     "Wireshark",
-    "Burp Suite",
     "Kali Linux",
-    "Nessus",
-    "OpenVAS",
-    "Splunk",
     "SIEM Tools"
   ],
   languages: [
     "Python",
-    "JavaScript",
-    "Bash",
-    "PowerShell",
     "SQL",
-    "C++",
-    "Java"
+    "C#",
   ],
-  other: [
-    "Cloud Security (AWS, Azure)",
-    "Docker & Kubernetes",
-    "Network Security",
-    "Web Application Security",
-    "Mobile Security",
-    "Compliance (ISO 27001, GDPR)"
-  ]
 };
 
 export const certifications = [
