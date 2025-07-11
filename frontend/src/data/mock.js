@@ -4,7 +4,7 @@ export const personalInfo = {
   name: "Ravindu Hettiarachchi",
   title: "Cybersecurity Professional",
   bio: "Passionate cybersecurity expert with extensive experience in threat analysis, vulnerability assessment, and security architecture. Dedicated to protecting digital assets and staying ahead of evolving cyber threats through continuous learning and hands-on implementation.",
-  profileImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+  profileImage: "https://drive.google.com/file/d/1ltwfPYjA7Okul6HZwrJh6CPamZQNVFvB/view?usp=sharing",
   email: "ravindu.sashith@gmail.com.com",
   phone: "+94 74 133 6260"
 };
