@@ -29,6 +29,7 @@ const Navigation = () => {
     { id: 'certifications', label: 'Certifications', action: () => scrollToSection('certifications') },
     { id: 'projects', label: 'Projects', action: () => scrollToSection('projects') },
     { id: 'experience', label: 'Experience', action: () => scrollToSection('experience') },
+    { id: 'education', label: 'Education', action: () => scrollToSection('education') },
     { id: 'contact', label: 'Contact', action: () => scrollToSection('contact') },
   ];
 
